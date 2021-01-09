@@ -94,7 +94,7 @@ void Crafter::Sniffer::SetInterface(const std::string& iface) {
 						     BUFSIZ,  /* maximum number of bytes to capture per packet */
 									  /* BUFSIZE is defined in pcap.h */
 						     1,       /* promisc - 1 to set card in promiscuous mode, 0 to not */
-						     0,       /* to_ms - amount of time to perform packet capture in milliseconds */
+						     1000/*0*/,       /* to_ms - amount of time to perform packet capture in milliseconds */
 									  /* 0 = sniff until error */
 						     errbuf); /* error message buffer if something goes wrong */
 	if (handle == NULL)
@@ -181,7 +181,7 @@ Crafter::Sniffer::Sniffer(const std::string& filter, const std::string& iface, P
 						     BUFSIZ,  /* maximum number of bytes to capture per packet */
 									  /* BUFSIZE is defined in pcap.h */
 						     1,       /* promisc - 1 to set card in promiscuous mode, 0 to not */
-						     0,       /* to_ms - amount of time to perform packet capture in milliseconds */
+						     1000/*0*/,       /* to_ms - amount of time to perform packet capture in milliseconds */
 									  /* 0 = sniff until error */
 						     errbuf); /* error message buffer if something goes wrong */
 	if (handle == NULL)
